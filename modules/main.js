@@ -95,9 +95,6 @@ class Selector {
             case 'I Would Hate You If I Could':
                 console.log(this.lyrics["I Would Hate You If I Could"])//NEED TO FINISH SWITCH STATEMENT
                 break;
-        
-            default:
-                break;
         }
     }   
 }
