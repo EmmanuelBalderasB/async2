@@ -183,3 +183,5 @@ while  (arr.length <  5) {
     console.log(arr);
 }*/
 console.log(songs.getSong('upbeat'))
+
+module.exports = songs;
