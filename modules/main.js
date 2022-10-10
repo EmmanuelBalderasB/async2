@@ -42,10 +42,51 @@ class Selector {
         }
         this.mood = [this.upbeat,this.emotional,this.melancholic,this.hopeful,this.content,this.sad,this.anxious,this.angsty];
         this.lyrics = {
+            //Finish Map
             'Mass': `But I'd hate that job as much as you do, if I was stuck between Barton and Binghamton too`,
             'Going To Bed Now': `I'll admit I'm in the same boat caught between my adolescent safety net, and where the world wants me to be`,
             'I Would Hate You If I Could': `I don't want to waste away another cell on a memory, when you're just another meaningless lover`,
-
+            'Cutting My Fingers Off': `And even with that summer without you, I'd rather cut my fingers off`,
+            'New Scram': `All I know is something's wrong, because every day, I'm craving that new scream, lusting for more than just old dreams`,
+            'Hello Euphoria': `I'm getting old in the face, Everyday there's another new line`,
+            'Dizzy On The Comedown': `Up and down like a red rubber ball, you're always back and forth like the clock on the wall, I want to know about you`,
+            'Humming': `Chasing you, I'm falling through the rabbit hole, deep down into an old slope`,
+            'Diazepam': `Your father doesn't like me, cause I'm not into sports. And your mother won't approve because I'm not of the cross`,
+            'Take My Head': `Cut my brain into hemispheres, I want to smash my face until it's nothing but ears`,
+            'Intrapersonal': `There's a fever burning up in me, I'm tangled up inside a sinking feeling, slipping out of touch with the controls. It's all intrapersonal`,
+            'Sunshine Type': `You can try all you want, You still won't make things change`,
+            'Supernatural': `I could try but I can't explain how I do, I just know it... Something supernatural`,
+            'Most Of The Time': `You can find me, drifting slowly, sinking beneath the sea`,
+            'New Vision': `Sewn your own faint dream, followed unconditionally, hard to undo, new vision of you`,
+            'Blush': `Tell me what's wrong, with forcing myself to write it down. Never made a sound, I never second guess, I'm right the first time`,
+            'Wedding Singer': `Said goodbye from the front porch, I always wonder if you're smiling at us or if you're looking away, I'd ask, but either way, I feel sorry for you`,
+            'Play Ball!': `This compilation of sayings and tunes means everything to me now`,
+            'Timmy Bowers': `Wait a minute 'cause, I've been living more like a piece of shit without you`,
+            'Just Another Face': `I'm not just another face, I'm not just another name, Even if you can't see it now, We're proud of what's to come, and you`,
+            'Pothole': `And the mops of greasy hair, will romanticize my despair, but they won't know, that I didn't care`,
+            'Two Good Things': `But I'm still outside, not doing anything wrong, just walking in circles, replaying high school songs in my head, because it's better than lying awake`,
+            'Charlie Black': `Wait a minute, 'cause I've been living, more like a fucking king without you`,
+            'The Weekend': `You got a smile that could light this town and we might need it, cause it gets dark around here, real dark around here`,
+            'Coals': `Eight hours on the top of a bus just to find out in the end, I will never stop falling in love`,
+            'Coding These To Lukens': `Spit fire, spit blood, spit fast, I'm heated, I'm sure this won't linger, longer than it has to`,
+            'Re-Do': `I want a complete re-do, maybe change my name, report the losses grab the claim "It's a shame, it's such a shame" we're pissing away our time`,
+            'The Waterboy Returns': `Hey man, whatcha thinking about? Not to be blunt, but haven't heard from you in days, are you okay? You can talk to me, do you have anything to say?`,
+            'Rock Bottom': `After reading that text from your friends, I start losing all my confidence, so I'll stay tired, I know soon I'll be bailing`,
+            'Fine, Great':`I hate worrying about the future, 'cause all my current problems are based around the past`,
+            'Your Pain Is Mine Now': ``,
+            'In Between': ``,
+            'Head In The Ceiling Fan': ``,
+            'Safe In Your Skin': ``,
+            'Murder Your Memory': ``,
+            'Symmetry': ``,
+            'Mrahc': ``,
+            'Numb But I Still Feel It': ``,
+            'Where Am I?': ``,
+            'Rose Of Sharon': ``,
+            'Liar\'s Love': ``,
+            'Hypernight': ``,
+            'Chlorine': ``,
+            'Dizzy': ``
         }
     }
     getSong(inp) {
@@ -93,16 +134,52 @@ class Selector {
         let result = '';
         switch (song) {
             case 'I Would Hate You If I Could':
-                console.log(this.lyrics["I Would Hate You If I Could"])//NEED TO FINISH SWITCH STATEMENT
+                result = this.lyrics["I Would Hate You If I Could"];//NEED TO FINISH SWITCH STATEMENT
                 break;
+            case 'Cutting My Fingers Off':
+                result = this.lyrics["Cutting My Fingers Off"];
+                break;
+            case 'Going To Bed Now':
+                result = this.lyrics["Going To Bed Now"];
+                break;
+            case 'Mass':
+                result = this.lyrics["Mass"];
+                break;
+            case 'New Vision':
+                result = this.lyrics["New Vision"];
+                break;
+            case 'Blush':
+                result = this.lyrics["Blush"];
+                break;
+            case 'Take My Head':
+                result = this.lyrics[""];
+                break;
+            case 'Most Of The Time':
+                result = this.lyrics["Most Of The Time"];
+                break;
+            case 'Wedding Sinegr':
+                result = this.lyrics["Wedding Sinegr"];
+                break;
+            case 'Play Ball!':
+                result = this.lyrics["Play Ball!"];
+                break;
+            }
+        let artist = ''
+        for (const [key, value]of Object.entries(selection)) {
+            if(value === selection2) {
+                artist = key
+                break;
+            }
         }
+        return `You want ${inp} music. Your song is ${song} by ${artist}. Some lyrics: ${result}`;
     }   
 }
 
 
 const songs = new Selector();
-let i = 0;
-while  (i < 11) {
-    i++
-}
-console.log(songs.getSong('angsty'));
+/*let arr = [];
+while  (arr.length <  5) {
+    arr.push(songs.getSong('angsty'));
+    console.log(arr);
+}*/
+console.log(songs.getSong('upbeat'))
