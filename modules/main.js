@@ -175,13 +175,5 @@ class Selector {
     }   
 }
 
-
 const songs = new Selector();
-/*let arr = [];
-while  (arr.length <  5) {
-    arr.push(songs.getSong('angsty'));
-    console.log(arr);
-}*/
-console.log(songs.getSong('upbeat'))
-
 module.exports = songs;
