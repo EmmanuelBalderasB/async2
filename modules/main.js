@@ -52,7 +52,7 @@ class Selector {
             'Dizzy On The Comedown': `Up and down like a red rubber ball, you're always back and forth like the clock on the wall, I want to know about you`,
             'Humming': `Chasing you, I'm falling through the rabbit hole, deep down into an old slope`,
             'Diazepam': `Your father doesn't like me, cause I'm not into sports. And your mother won't approve because I'm not of the cross`,
-            'Take My Head': `Cut my brain into hemispheres, I want to smash my face until it's nothing but ears`,
+            'Take My Head': `Take my head cause it's what I want, I want to fall asleep with the TV on, and let the house burn down until it's gone with me inside`,
             'Intrapersonal': `There's a fever burning up in me, I'm tangled up inside a sinking feeling, slipping out of touch with the controls. It's all intrapersonal`,
             'Sunshine Type': `You can try all you want, You still won't make things change`,
             'Supernatural': `I could try but I can't explain how I do, I just know it... Something supernatural`,
@@ -151,9 +151,6 @@ class Selector {
             case 'Blush':
                 result = this.lyrics["Blush"];
                 break;
-            case 'Take My Head':
-                result = this.lyrics[""];
-                break;
             case 'Most Of The Time':
                 result = this.lyrics["Most Of The Time"];
                 break;
@@ -162,6 +159,15 @@ class Selector {
                 break;
             case 'Play Ball!':
                 result = this.lyrics["Play Ball!"];
+                break;
+            case 'Take My Head':
+                result = this.lyrics["Take My Head"];
+                break;
+            case 'Timmy Bowers':
+                result = this.lyrics["Timmy Bowers"];
+                break;
+            case 'Just Another Face':
+                result = this.lyrics["Just Another Face"];
                 break;
             }
         let artist = ''
