@@ -2,7 +2,13 @@ const songs = require('../modules/main.js');
 const assert = require("assert");
 
 describe('songs', () => {
-    it('returns a song, author, and some lyrics based on a given input', () => {
-        
+    describe('getGenre', () => {
+        it ('returns a genre based from a predetermined list of inputs', () => {
+            //SETUP
+
+            //EXERCISE
+
+            //EXECUTION
+        })
     })
 })
