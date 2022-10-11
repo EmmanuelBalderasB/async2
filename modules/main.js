@@ -157,13 +157,15 @@ class Selector {
     }
     getArtist(genre,song) {
         let artist = '';
-        //Iterates through key value pairs of selection object, if the value is == to one of the values in selection2 then save the value of current key to artist variable
+        //Iterates through key value pairs of genre object, if the value[0] OR value [1] is == to selected song then save the value of current key to artist variable
         for (const [key, value]of Object.entries(genre)) {
-            if(value === song) {
+            console.log(value[0])
+            if( value[0] === song || value[1] === song) {
                 artist = key;
                 break;
             }
         }
+        //console.log(genre)
         return artist
         //return `You want ${inp} music. Your song is ${song} by ${artist}. Some lyrics: ${result}`;
     }
