@@ -1,0 +1,22 @@
+{
+  "name": "async2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha './specs/app.spec.js'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EmmanuelBalderasB/async2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EmmanuelBalderasB/async2/issues"
+  },
+  "homepage": "https://github.com/EmmanuelBalderasB/async2#readme",
+  "devDependencies": {
+    "mocha": "^10.0.0"
+  }
+}
