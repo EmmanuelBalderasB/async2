@@ -40,7 +40,7 @@ class Selector {
             TitleFight: ['New Vision', 'Blush'],
             Turnover: ['I Would Hate You If I Could','Cutting My Fingers Off']
         }
-        this.moods = [this.upbeat,this.emotional,this.melancholic,this.hopeful,this.content,this.sad,this.anxious,this.angsty];
+        this.moods = ['upbeat','emotional','melancholic','hopeful','content','sad','anxious','angsty'];
         this.lyrics = {
             'Mass': `But I'd hate that job as much as you do, if I was stuck between Barton and Binghamton too`,
             'Going To Bed Now': `I'll admit I'm in the same boat caught between my adolescent safety net, and where the world wants me to be`,
@@ -159,7 +159,7 @@ class Selector {
         let artist = '';
         //Iterates through key value pairs of genre object, if the value[0] OR value [1] is == to selected song then save the value of current key to artist variable
         for (const [key, value]of Object.entries(genre)) {
-            console.log(value[0])
+            //console.log(value[0])
             if( value[0] === song || value[1] === song) {
                 artist = key;
                 break;
@@ -169,8 +169,7 @@ class Selector {
         return artist
         //return `You want ${inp} music. Your song is ${song} by ${artist}. Some lyrics: ${result}`;
     }
-    onSuccess(genre,song,lyrics,artist) {
-        let _genre = genre;
+    onSuccess(song,lyrics,artist) {
         let _song = song;
         let _lyrics = lyrics;
         let _artist = artist;
