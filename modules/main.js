@@ -87,9 +87,10 @@ class Selector {
             'Chlorine': `Poison in your mood, chlorine eyes from you, decorated blue, opening a wound`,
             'Dizzy': `Fumble on a road, blackened backyard, weapon from a trunk, static Recall`
         }
+        this.input = '';
     }
     
-    getSong(inp) {
+    getGenre(inp) {
         let selection = '';
         //compares argument inputted by user then saves the corresponding genre of music selected to selection variable as an object
         switch (inp) {
@@ -120,24 +121,31 @@ class Selector {
             default:
                 break;
         }
-        //console.log(selection)
-        let num = Math.floor(Math.random() * Object.keys(selection).length);
+        this.input = inp;
+        //console.log(this.input);
+        return selection;
+    }
+    getSong(genre) {
+        let num = Math.floor(Math.random() * Object.keys(genre).length);
         //console.log(num)
         let selection2 = '';
         switch (num) {
             case 0:
-                selection2 = selection.ModernBaseball;
+                selection2 = genre.ModernBaseball;
                 break;
             case 1:
-                selection2 = selection.TitleFight;
+                selection2 = genre.TitleFight;
             case 2:
-                selection2 = selection.Turnover;
+                selection2 = genre.Turnover;
             default:
                 break;
         }
         let num2 = Math.floor(Math.random() * selection2.length) 
         const song = selection2[num2];
         //console.log(selection2)
+        return song;
+    }
+    getLyrics(song) {
         let result = '';
         //Iterates through lyrics object if song == to the currently indexed key then save value to result
         for (const lyric in this.lyrics) {
@@ -145,16 +153,28 @@ class Selector {
                 result  = this.lyrics[lyric];
             }
         }
+        return result;
+    }
+    getArtist(genre,song) {
         let artist = '';
         //Iterates through key value pairs of selection object, if the value is == to one of the values in selection2 then save the value of current key to artist variable
-        for (const [key, value]of Object.entries(selection)) {
-            if(value === selection2) {
+        for (const [key, value]of Object.entries(genre)) {
+            if(value === song) {
                 artist = key;
                 break;
             }
         }
-        return `You want ${inp} music. Your song is ${song} by ${artist}. Some lyrics: ${result}`;
+        return artist
+        //return `You want ${inp} music. Your song is ${song} by ${artist}. Some lyrics: ${result}`;
     }
+    onSuccess(genre,song,lyrics,artist) {
+        let _genre = genre;
+        let _song = song;
+        let _lyrics = lyrics;
+        let _artist = artist;
+        return `You want ${this.input} music. Your song is ${_song} by ${_artist}. Some lyrics: ${_lyrics}`;
+    }
+    
 }
 
 const songs = new Selector();
