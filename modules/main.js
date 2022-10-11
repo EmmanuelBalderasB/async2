@@ -88,9 +88,10 @@ class Selector {
             'Dizzy': `Fumble on a road, blackened backyard, weapon from a trunk, static Recall`
         }
     }
+    
     getSong(inp) {
         let num = Math.floor(Math.random() * 3);
-        let selection = ''
+        let selection = '';
         switch (inp) {
             case 'upbeat':
                 selection = this.upbeat;
@@ -136,15 +137,15 @@ class Selector {
         let result = '';
             //Iterates through lyrics object if song == to the currently indexed key then save value to result
             for (const lyric in this.lyrics) {
-                if (lyric === song){
+                if (lyric === song) {
                     result  = this.lyrics[lyric];
                 }
             }
-        let artist = ''
+        let artist = '';
 
         for (const [key, value]of Object.entries(selection)) {
             if(value === selection2) {
-                artist = key
+                artist = key;
                 break;
             }
         }
