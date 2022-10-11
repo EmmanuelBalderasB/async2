@@ -54,7 +54,7 @@ class Selector {
             'Take My Head': `Take my head cause it's what I want, I want to fall asleep with the TV on, and let the house burn down until it's gone with me inside`,
             'Intrapersonal': `There's a fever burning up in me, I'm tangled up inside a sinking feeling, slipping out of touch with the controls. It's all intrapersonal`,
             'Sunshine Type': `You can try all you want, You still won't make things change`,
-            'Supernatural': `I could try but I can't explain how I do, I just know it... Something supernatural`,
+            'Super Natural': `I could try but I can't explain how I do, I just know it... Something supernatural`,
             'Most Of The Time': `You can find me, drifting slowly, sinking beneath the sea`,
             'New Vision': `Sewn your own faint dream, followed unconditionally, hard to undo, new vision of you`,
             'Blush': `Tell me what's wrong, with forcing myself to write it down. Never made a sound, I never second guess, I'm right the first time`,
@@ -90,8 +90,8 @@ class Selector {
     }
     
     getSong(inp) {
-        let num = Math.floor(Math.random() * 3);
         let selection = '';
+        //compares argument inputted by user then saves the corresponding genre of music selected to selection variable as an object
         switch (inp) {
             case 'upbeat':
                 selection = this.upbeat;
@@ -120,7 +120,10 @@ class Selector {
             default:
                 break;
         }
-        let selection2 = ''
+        //console.log(selection)
+        let num = Math.floor(Math.random() * Object.keys(selection).length);
+        //console.log(num)
+        let selection2 = '';
         switch (num) {
             case 0:
                 selection2 = selection.ModernBaseball;
@@ -134,6 +137,7 @@ class Selector {
         }
         let num2 = Math.floor(Math.random() * selection2.length) 
         const song = selection2[num2];
+        //console.log(selection2)
         let result = '';
         //Iterates through lyrics object if song == to the currently indexed key then save value to result
         for (const lyric in this.lyrics) {
@@ -142,7 +146,7 @@ class Selector {
             }
         }
         let artist = '';
-
+        //Iterates through key value pairs of selection object, if the value is == to one of the values in selection2 then save the value of current key to artist variable
         for (const [key, value]of Object.entries(selection)) {
             if(value === selection2) {
                 artist = key;
@@ -150,7 +154,7 @@ class Selector {
             }
         }
         return `You want ${inp} music. Your song is ${song} by ${artist}. Some lyrics: ${result}`;
-    }   
+    }
 }
 
 const songs = new Selector();
