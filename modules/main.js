@@ -135,12 +135,12 @@ class Selector {
         let num2 = Math.floor(Math.random() * selection2.length) 
         const song = selection2[num2];
         let result = '';
-            //Iterates through lyrics object if song == to the currently indexed key then save value to result
-            for (const lyric in this.lyrics) {
-                if (lyric === song) {
-                    result  = this.lyrics[lyric];
-                }
+        //Iterates through lyrics object if song == to the currently indexed key then save value to result
+        for (const lyric in this.lyrics) {
+            if (lyric === song) {
+                result  = this.lyrics[lyric];
             }
+        }
         let artist = '';
 
         for (const [key, value]of Object.entries(selection)) {
