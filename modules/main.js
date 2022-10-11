@@ -40,7 +40,7 @@ class Selector {
             TitleFight: ['New Vision', 'Blush'],
             Turnover: ['I Would Hate You If I Could','Cutting My Fingers Off']
         }
-        this.mood = [this.upbeat,this.emotional,this.melancholic,this.hopeful,this.content,this.sad,this.anxious,this.angsty];
+        this.moods = [this.upbeat,this.emotional,this.melancholic,this.hopeful,this.content,this.sad,this.anxious,this.angsty];
         this.lyrics = {
             'Mass': `But I'd hate that job as much as you do, if I was stuck between Barton and Binghamton too`,
             'Going To Bed Now': `I'll admit I'm in the same boat caught between my adolescent safety net, and where the world wants me to be`,
