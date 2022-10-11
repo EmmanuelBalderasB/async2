@@ -42,7 +42,6 @@ class Selector {
         }
         this.mood = [this.upbeat,this.emotional,this.melancholic,this.hopeful,this.content,this.sad,this.anxious,this.angsty];
         this.lyrics = {
-            //Finish Map
             'Mass': `But I'd hate that job as much as you do, if I was stuck between Barton and Binghamton too`,
             'Going To Bed Now': `I'll admit I'm in the same boat caught between my adolescent safety net, and where the world wants me to be`,
             'I Would Hate You If I Could': `I don't want to waste away another cell on a memory, when you're just another meaningless lover`,
@@ -103,7 +102,7 @@ class Selector {
                 selection = this.melancholic;
                 break;
             case 'hopeful':
-                selection = this.content;
+                selection = this.hopeful;
                 break;
             case 'sad':
                 selection = this.sad;
@@ -113,6 +112,9 @@ class Selector {
                 break;
             case 'angsty':
                 selection = this.angsty;
+                break;
+            case 'content':
+                selection = this.content;
                 break;
             default:
                 break;
@@ -132,45 +134,14 @@ class Selector {
         let num2 = Math.floor(Math.random() * selection2.length) 
         const song = selection2[num2];
         let result = '';
-        switch (song) {
-            case 'I Would Hate You If I Could':
-                result = this.lyrics["I Would Hate You If I Could"];//NEED TO FINISH SWITCH STATEMENT
-                break;
-            case 'Cutting My Fingers Off':
-                result = this.lyrics["Cutting My Fingers Off"];
-                break;
-            case 'Going To Bed Now':
-                result = this.lyrics["Going To Bed Now"];
-                break;
-            case 'Mass':
-                result = this.lyrics["Mass"];
-                break;
-            case 'New Vision':
-                result = this.lyrics["New Vision"];
-                break;
-            case 'Blush':
-                result = this.lyrics["Blush"];
-                break;
-            case 'Most Of The Time':
-                result = this.lyrics["Most Of The Time"];
-                break;
-            case 'Wedding Sinegr':
-                result = this.lyrics["Wedding Sinegr"];
-                break;
-            case 'Play Ball!':
-                result = this.lyrics["Play Ball!"];
-                break;
-            case 'Take My Head':
-                result = this.lyrics["Take My Head"];
-                break;
-            case 'Timmy Bowers':
-                result = this.lyrics["Timmy Bowers"];
-                break;
-            case 'Just Another Face':
-                result = this.lyrics["Just Another Face"];
-                break;
+            //Iterates through lyrics object if song == to the currently indexed key then save value to result
+            for (const lyric in this.lyrics) {
+                if (lyric === song){
+                    result  = this.lyrics[lyric];
+                }
             }
         let artist = ''
+
         for (const [key, value]of Object.entries(selection)) {
             if(value === selection2) {
                 artist = key
