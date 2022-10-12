@@ -14,9 +14,13 @@ I added a loop to run the program x number of times to get a few different resul
 ```
 node src/app.js
 ```
-If you want to input your own mood (as long as it is in the provided array), I commented out a second function called "chain2" inside './src/app.js' where you can uncomment it and enter your mood on the function's parameter. it looks like it this:
+If you want to input your own mood (as long as it is in the provided array), I commented out a second function called "chain2" inside './src/app.js' where you can uncomment it and enter your mood on the function's parameter. It looks like it this:
 ```
 console.log(chain2('your input here'));
+```
+Mood array:
+```
+['upbeat','emotional','melancholic','hopeful','content','sad','anxious','angsty']
 ```
 
 But why?
