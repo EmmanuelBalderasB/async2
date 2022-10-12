@@ -14,18 +14,17 @@ describe('songs', () => {
                 Turnover: ['Sunshine Type','Super Natural']
             }
             //EXERCISE
-            const actual = songs.getGenre(i)
+            const actual = songs.getGenre(i);
             //EXECUTION
             assert.deepEqual(actual, expected);
-        })
+        });
         it ('throws an error if the given input is not in the provided list', () => {
             //SETUP
             const i = 'happy';
-            const expected = Error('Please input a mood from the provided list');
             //EXERCISE
             const exercise = () => {    songs.getGenre(i)   };
             //EXECUTION
-           assert.throws(exercise, /Please input a mood from the provided list/)
-        })
-    })
-})
+           assert.throws(exercise, /Please input a mood from the provided list/);
+        });
+    });
+});
