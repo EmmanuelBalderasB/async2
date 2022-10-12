@@ -1,6 +1,6 @@
 Codecademy Mixed Messages Project
 =================================
-My mixed messages app, I included a little bit more than the project originally demanded. It includes a testing suite using mocha and chai, and separation of concerns. 
+My mixed messages app, I included a little bit more code than the project originally demanded. It includes a testing suite using mocha and chai, and separation of concerns. 
 
 ABOUT
 -----
@@ -14,12 +14,12 @@ I added a loop to run the program x number of times to get a few different resul
 ```
 node src/app.js
 ```
-If you want to input your own mood (as long as it is in the provided array), I commented out a second function called 'chain2' inside './src/app.js' where you can uncomment it and enter your mood on the functions parameter. it looks like it this:
+If you want to input your own mood (as long as it is in the provided array), I commented out a second function called "chain2" inside './src/app.js' where you can uncomment it and enter your mood on the functions parameter. it looks like it this:
 ```
 console.log(chain2('your input here'));
 ```
 
 But why?
 --------
-I had initially --skipped-- forgot to do these challenge and now i'm further down the Fullstack path and wanted to give this a shot, also it's a goodway for people to discover some great tunes! I encourage to check them out! I might add also a new feature where you get a link to each song outputted --soon-- sometime.
+I had initially ~~skipped~~ forgot to do these challenge and now i'm further down the Fullstack path and wanted to give this a shot, also it's a goodway for people to discover some great tunes! I encourage to check them out! I might add also a new feature where you get a link to each song outputted ~~soon~~ sometime.
 Feel free to comment/discuss or roast my janky code haha!
