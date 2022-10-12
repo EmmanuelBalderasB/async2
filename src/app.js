@@ -17,3 +17,17 @@ const chain = () => {
 
 chain();
 console.log(arr);
+
+/*const chain2 = (inp) => {
+    
+        let genre =  songs.getGenre(inp);
+        let song  =  songs.getSong(genre);
+        let lyrics =  songs.getLyrics(song);
+        let artist =  songs.getArtist(genre,song);
+        let success =  songs.onSuccess(song, lyrics, artist);
+        return success;
+        //console.log(genre);
+    
+}
+
+console.log(chain2('your input here'));*/
