@@ -26,5 +26,5 @@ Mood array:
 
 But why?
 --------
-I had initially ~~skipped~~ forgot to do these challenge and now i'm further down the Fullstack path and wanted to give this a shot, also it's a goodway for people to discover some great tunes! I encourage to check them out! I might add also a new feature where you get a link to each song outputted ~~soon~~ sometime.
-Feel free to comment/discuss or roast my janky code haha!
+I had initially ~~skipped~~ forgot to do these challenge, so now i'm further down the Fullstack path I wanted to give this a shot. It is also a goodway for people to discover some great tunes! I encourage to check them out! I might add also a new feature where you get a link to each song outputted ~~soon~~ sometime.
+Feel free to comment/discuss or roast my janky code ha!
