@@ -125,10 +125,11 @@ class Selector {
         }
         this.input = inp;
         //console.log(this.input);
+        let err = new Error("ERROR: Please input a mood from the provided list");
         if (valid) {
             return selection;
         } else {
-            throw new Error('Please input a mood from the provided list');
+            throw err;
         }
     }
     getSong(genre) {
