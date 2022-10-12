@@ -93,6 +93,7 @@ class Selector {
     getGenre(inp) {
         let selection = '';
         //compares argument inputted by user then saves the corresponding genre of music selected to selection variable as an object
+        let valid = true;
         switch (inp) {
             case 'upbeat':
                 selection = this.upbeat;
@@ -119,11 +120,16 @@ class Selector {
                 selection = this.content;
                 break;
             default:
+                valid  = false;
                 break;
         }
         this.input = inp;
         //console.log(this.input);
-        return selection;
+        if (valid) {
+            return selection;
+        } else {
+            throw new Error('Please input a mood from the provided list');
+        }
     }
     getSong(genre) {
         let num = Math.floor(Math.random() * Object.keys(genre).length);
