@@ -40,7 +40,7 @@ describe('songs', () => {
             //EXERCISE
             const exercise = songs.getSong(i);
             //EXECUTION
-            //NOT FIXED
+            //NOT FINISHED
             ex(expected).to.include(songs.getSong(i));
         });
     });
