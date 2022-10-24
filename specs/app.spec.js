@@ -1,4 +1,4 @@
-const songs = require('../modules/main.js');
+const songs = require('../modules/main.js').default;
 const assert = require("assert");
 const chai = require("chai");
 const ex = chai.expect;

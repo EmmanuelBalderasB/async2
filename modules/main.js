@@ -1,47 +1,46 @@
-class Selector {
-    constructor() {
-        this.upbeat = {
+const songs = {
+        upbeat: {
             ModernBaseball: ['Wedding Singer','Play Ball!'],
             TitleFight:  ['Your Pain Is Mine Now','In Between'],
-            Turnover: ['Take My Head','Most Of The Time']        
-        }
-        this.emotional = {
+            Turnover: ['Take My Head','Most Of The Time']
+        },
+        emotional: {
             TitleFight: ['Head In The Ceiling Fan', 'Safe In Your Skin'],
             ModernBaseball: ['Timmy Bowers','Just Another Face'],
             Turnover: ['Humming','Intrapersonal']
-        }
-        this.melancholic = {
+        },
+        melancholic: {
             ModernBaseball: ['Pothole','Two Good Things'],
             TitleFight: ['Murder Your Memory', 'Symmetry'],
             Turnover: ['Dizzy On The Comedown','Diazepam']
-        }
-        this.hopeful = {
+        },
+        hopeful: {
             ModernBaseball: ['Coals','Coding These To Lukens'],
             TitleFight: ['Mrahc', 'Numb But I Still Feel It'],
             Turnover: ['Intrapersonal', 'Super Natural']
-        }
-        this.content = {
+        },
+        content: {
             ModernBaseball: ['Charlie Black','The Weekend'],
             TitleFight: ['Where Am I?','Rose Of Sharon'],
             Turnover: ['Sunshine Type','Super Natural']
-        }
-        this.sad = {
+        },
+        sad: {
             ModernBaseball: ['Re-Do','The Waterboy Returns'],
             TitleFight: ['Liar\'s Love', 'Hypernight'],
             Turnover: ['Cutting My Fingers Off','I Would Hate You If I Could']
-        }
-        this.anxious = {
+        },
+        anxious: {
             ModernBaseball: ['Rock Bottom','Fine, Great'],
             TitleFight: ['Chlorine','Dizzy'],
             Turnover: ['New Scream','Hello Euphoria']
-        }
-        this.angsty = {
+        },
+        angsty: {
             ModernBaseball: ['Mass', 'Going To Bed Now'],
             TitleFight: ['New Vision', 'Blush'],
             Turnover: ['I Would Hate You If I Could','Cutting My Fingers Off']
-        }
-        this.moods = ['upbeat','emotional','melancholic','hopeful','content','sad','anxious','angsty'];
-        this.lyrics = {
+        },
+        moods: ['upbeat','emotional','melancholic','hopeful','content','sad','anxious','angsty'],
+        lyrics: {
             'Mass': `But I'd hate that job as much as you do, if I was stuck between Barton and Binghamton too`,
             'Going To Bed Now': `I'll admit I'm in the same boat caught between my adolescent safety net, and where the world wants me to be`,
             'I Would Hate You If I Could': `I don't want to waste away another cell on a memory, when you're just another meaningless lover`,
@@ -86,10 +85,10 @@ class Selector {
             'Hypernight': `Spent my life, trying to make everything right, Hypernight, widened sight to make me realize`,
             'Chlorine': `Poison in your mood, chlorine eyes from you, decorated blue, opening a wound`,
             'Dizzy': `Fumble on a road, blackened backyard, weapon from a trunk, static Recall`
-        }
-        this.input = '';
-    }
-    
+        },
+        input: '',
+
+
     getGenre(inp) {
         let selection = '';
         //compares argument inputted by user then saves the corresponding genre of music selected to selection variable as an object
@@ -131,7 +130,7 @@ class Selector {
         } else {
             throw err;
         }
-    }
+    },
     getSong(genre) {
         let num = Math.floor(Math.random() * Object.keys(genre).length);
         //console.log(num)
@@ -147,11 +146,11 @@ class Selector {
             default:
                 break;
         }
-        let num2 = Math.floor(Math.random() * selection2.length) 
+        let num2 = Math.floor(Math.random() * selection2.length)
         const song = selection2[num2];
         //console.log(selection2)
         return song;
-    }
+    },
     getLyrics(song) {
         let result = '';
         //Iterates through lyrics object if song == to the currently indexed key then save value to result
@@ -161,7 +160,7 @@ class Selector {
             }
         }
         return result;
-    }
+    },
     getArtist(genre,song) {
         let artist = '';
         //Iterates through key value pairs of genre object, if the value[0] OR value [1] is == to selected song then save the value of current key to artist variable
@@ -175,15 +174,14 @@ class Selector {
         //console.log(genre)
         return artist
         //return `You want ${inp} music. Your song is ${song} by ${artist}. Some lyrics: ${result}`;
-    }
+    },
     onSuccess(song,lyrics,artist) {
         let _song = song;
         let _lyrics = lyrics;
         let _artist = artist;
         return `You want ${this.input} music. Your song is ${_song} by ${_artist}. Some lyrics: ${_lyrics}`;
     }
-    
+
 }
 
-const songs = new Selector();
-module.exports = songs;
+export default songs;
