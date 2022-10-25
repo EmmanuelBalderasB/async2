@@ -20,6 +20,8 @@ const inputE = document.getElementById('input');
 const input = inputE.value;
 const button = document.getElementById('submit');
 const container = document.getElementById('container');
+const resetBttn = document.getElementById('reset');
+const form = document.getElementById('form');
 
 const format = (inp) => {
   try {
@@ -28,21 +30,29 @@ const format = (inp) => {
     let lyrics =  songs.getLyrics(song);
     let artist =  songs.getArtist(genre,song);
     let success =  songs.onSuccess(song, lyrics, artist);
+    return success;
 
-    //return success;
-    //console.log(genre);
-    return 'hello world'//success;
   } catch(error) {
     console.log(error);
   }
 }
 
-button.addEventListener("click", function() {
+const display = (event) => {
+  event.preventDefault();
+  while(container.firstChild){
+    container.removeChild(container.firstChild);
+  }
   const result = format(input);
-  container.innerHTML = result;
-  console.log('hello world')
-});
+  container.innerHTML = `<pre>${result}</pre>`;
+}
 
+const reset = (event) => {
+  form.reset();
+}
+
+button.addEventListener('click', display);
+
+resetBttn.addEventListener('click', reset)
 
 /*const chain = () => {
     for (let i = 0; i < moods.length; i++) {
