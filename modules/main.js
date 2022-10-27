@@ -96,7 +96,7 @@ const songs = {
             'Hello Euphoria': `I'm getting old in the face, Everyday there's another new line`,
             'Dizzy On The Comedown': `<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Q34dZ6VmI04" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`,
             'Humming': `Chasing you, I'm falling through the rabbit hole, deep down into an old slope`,
-            'Diazepam': `Your father doesn't like me, cause I'm not into sports. And your mother won't approve because I'm not of the cross`,
+            'Diazepam': `<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/SRv4uhFAnbY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`,
             'Take My Head': `Take my head cause it's what I want, I want to fall asleep with the TV on, and let the house burn down until it's gone with me inside`,
             'Intrapersonal': `There's a fever burning up in me, I'm tangled up inside a sinking feeling, slipping out of touch with the controls. It's all intrapersonal`,
             'Sunshine Type': `You can try all you want, You still won't make things change`,
@@ -108,8 +108,8 @@ const songs = {
             'Play Ball!': `This compilation of sayings and tunes means everything to me now`,
             'Timmy Bowers': `Wait a minute 'cause, I've been living more like a piece of shit without you`,
             'Just Another Face': `I'm not just another face, I'm not just another name, Even if you can't see it now, We're proud of what's to come, and you`,
-            'Pothole': `And the mops of greasy hair, will romanticize my despair, but they won't know, that I didn't care`,
-            'Two Good Things': `But I'm still outside, not doing anything wrong, just walking in circles, replaying high school songs in my head, because it's better than lying awake`,
+            'Pothole': `<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/W95u98wMlXo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`,
+            'Two Good Things': `<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/GvHXu0gBucA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`,
             'Charlie Black': `Wait a minute, 'cause I've been living, more like a fucking king without you`,
             'The Weekend': `You got a smile that could light this town and we might need it, cause it gets dark around here, real dark around here`,
             'Coals': `Eight hours on the top of a bus just to find out in the end, I will never stop falling in love`,
@@ -122,8 +122,8 @@ const songs = {
             'In Between': `Constantly in-between, home and where I'll be, light separates the space, I feel the cold against my face`,
             'Head In The Ceiling Fan': `Head in the ceiling, fan goes rolling and missing like bullets, slamming into deer skin`,
             'Safe In Your Skin': `When you're feeling safe in your skin, maybe we'll meet again, when you're feeling down in Kingston, maybe we'll meet again`,
-            'Murder Your Memory': `Murder all your memory, let it suffocate, reduce`,
-            'Symmetry': `You're a match that can't be lit, spark a flame, burn infinite`,
+            'Murder Your Memory': `<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/-wSPhg7Hlpw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`,
+            'Symmetry': `<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/6xnvwYao5as" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`,
             'Mrahc': `Whisper, floating kisses from afar, hung your portrait on my wall, out a spiderweb I crawl`,
             'Numb But I Still Feel It': `Everything's so uncertain, can't find the right direction, you look in the mirror and tell me you see clear`,
             'Where Am I?': `This strange routine sometimes weighs down on me, but I wouldn't trade it, not for anything`,
@@ -169,7 +169,7 @@ const songs = {
         }
         this.input = inp;
         //console.log(this.input);
-        let err = new Error("ERROR: Please input a mood from the provided list");
+        let err = new Error("Please input a mood from the provided list");
         if (valid) {
             return selection;
         } else {
@@ -186,6 +186,7 @@ const songs = {
                 break;
             case 1:
                 selection2 = genre.TitleFight;
+                break;
             case 2:
                 selection2 = genre.Turnover;
             default:
@@ -220,13 +221,42 @@ const songs = {
         return artist
         //return `You want ${inp} music. Your song is ${song} by ${artist}. Some lyrics: ${result}`;
     },
-    onSuccess(song,lyrics,artist) {
+    getEmbedded(song) {
+        let embedded = '';
+        for (const [key, value] of Object.entries(this.embed)) {
+            if (key === song) {
+                embedded = value;
+                break;
+            }
+        }
+        return embedded ;
+    },
+    onSuccess(song,lyrics,artist,embedded) {
         let _song = song;
         let _lyrics = lyrics;
-        let _artist = artist;
-        return `You want ${this.input} music. Your song is ${_song} by ${_artist}. Some lyrics: ${_lyrics}`;
+        let _artist = ''
+        switch (artist) {
+            case 'ModernBaseball':
+                _artist = 'Modern Baseball'
+                break;
+            case 'TitleFight':
+                _artist = 'Title Fight'
+                break;
+            default:
+                _artist = artist;
+                break;
+                }
+        //let _embedded = embedded;
+        return `You want ${this.input} music. Your song is ${_song} by ${_artist}. Some lyrics: ${_lyrics}.`;
     }
 
 }
 
 export default songs;
+/*let genre =  songs.getGenre('melancholic');
+    let song  =  songs.getSong(genre);
+    let lyrics =  songs.getLyrics(song);
+    let artist =  songs.getArtist(genre,song);
+    let embed = songs.getEmbedded(song)
+    let success =  songs.onSuccess(song, lyrics, artist, embed);
+    console.log(success)*/
