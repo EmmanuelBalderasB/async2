@@ -1,9 +1,44 @@
 body {
   color: white;
-  background-color: rgba(0, 0, 0, 0.793);
+  background-color: #393e46
+}
+
+pre {
+  text-align: left;
+  width: 400px;
+  height: 200px;
+  overflow: scroll;
+}
+
+
+
+button {
+  background-color: #f96d00;
+  border: 10px;
+  border-color: black;
+  color: #f2f2f2;
+}
+
+ul {
+  border: 1px;
+  border-color: white;
+  padding-top: 1px;
+  margin-top: 5px;
+  max-width: fit-content;
+  
+}
+
+#container {
+  width: 100px;
+  padding: 0%;
+  word-wrap: break-word;
 }
 
 #reset {
   height: 20px;
   width: auto;
+}
+
+h3#introduction {
+  margin-bottom: 0px;
 }
