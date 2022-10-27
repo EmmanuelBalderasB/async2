@@ -8,7 +8,7 @@ const insertMoods = () => {
     try {
         ul.innerHTML = moods.map(item => {
             return `<li class="li">${item}</li>`;
-        })
+        }).join('')
     } catch(error) {
         //console.log(error);
     }
@@ -29,9 +29,9 @@ const format = (inp) => {
     let song  =  songs.getSong(genre);
     let lyrics =  songs.getLyrics(song);
     let artist =  songs.getArtist(genre,song);
-    let success =  songs.onSuccess(song, lyrics, artist);
+    let embed = songs.getEmbedded(song);
+    let success =  songs.onSuccess(song, lyrics, artist, embed);
     return success;
-
   } catch(error) {
     console.log(error);
   }
@@ -53,17 +53,3 @@ const reset = (event) => {
 button.addEventListener('click', display);
 
 resetBttn.addEventListener('click', reset)
-
-/*const chain = () => {
-    for (let i = 0; i < moods.length; i++) {
-        let genre = songs.getGenre(moods[i]);
-        let song  =  songs.getSong(genre);
-        let lyrics =  songs.getLyrics(song);
-        let artist =  songs.getArtist(genre,song);
-        let success =  songs.onSuccess(song, lyrics, artist);
-        arr.push(success);
-        //console.log(genre);
-    }
-}
-
-chain();*/
