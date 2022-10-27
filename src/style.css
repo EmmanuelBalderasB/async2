@@ -1,6 +1,7 @@
 body {
-  color: white;
-  background-color: #393e46
+  color: #f2f2f2;
+  background-color: #393e46;
+  font-family:Georgia, 'Times New Roman', Times, monospace
 }
 
 pre {
@@ -8,6 +9,7 @@ pre {
   width: 400px;
   height: 200px;
   overflow: scroll;
+  word-wrap: break-word;
 }
 
 
@@ -15,23 +17,27 @@ pre {
 button {
   background-color: #f96d00;
   border: 10px;
-  border-color: black;
-  color: #f2f2f2;
+  border-color: #222831;
+  color: #f2f2f2
+}
+
+button:hover {
+  background-color: #222831;
+  color: #f96d00;
 }
 
 ul {
-  border: 1px;
   border-color: white;
-  padding-top: 1px;
-  margin-top: 5px;
+  border-style: solid;
+  border-width: 1px;
+  border-top: hidden;
+  border-bottom: hidden;
+  padding: 15px 135px 20px 160px;
+  margin-top: 0px;
+  margin-bottom: 5px;
+  margin-left: 0px;
   max-width: fit-content;
   
-}
-
-#container {
-  width: 100px;
-  padding: 0%;
-  word-wrap: break-word;
 }
 
 #reset {
