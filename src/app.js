@@ -47,7 +47,10 @@ const display = (event) => {
 }
 
 const reset = (event) => {
-  form.reset();
+  event.preventDefault();
+  //form.reset();
+  container.innerHTML = "";
+  inputE.value = ""
 }
 
 button.addEventListener('click', display);
