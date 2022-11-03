@@ -1,8 +1,13 @@
+html{
+  width: 414px;
+}
 body {
   color: #f8f8f8;
-  background-color: #393e46;
+  background-color: #222831;
   font-family: 'Oswald', sans-serif;
   margin-top: 0px;
+  min-width: fit-content;
+  width: fit-content;
 }
 
 pre {
@@ -10,7 +15,7 @@ pre {
   width: auto;
   word-wrap: break-word;
   white-space: pre-line;
-  background-color: #222831;
+  background-color: #171b21;
   border-radius: 0% 10% 10% 10%;
   padding: 2%;
 
@@ -31,14 +36,15 @@ button {
 }
 
 button:hover {
-  background-color: #222831;
+  background-color: #171b21;
   color: #f96d00;
 }
 ul {
-  padding: 15px 135px 20px 160px;
+  padding: 0px 135px 0px 160px;
   margin-top: auto;
   max-width: fit-content;
   list-style-type: none;
+  margin-bottom: 0px;
 }
 
 li{
