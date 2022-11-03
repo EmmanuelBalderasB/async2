@@ -247,7 +247,7 @@ const songs = {
                 break;
                 }
         //let _embedded = embedded;
-        return `You want ${this.input} music. Your song is ${_song} by ${_artist}. Some lyrics: ${_lyrics}.`;
+        return `You want: ${this.input} music.<br>Your song is: ${_song}<br>By: ${_artist}.<br>Some lyrics: "${_lyrics}".`;
     }
 
 }
