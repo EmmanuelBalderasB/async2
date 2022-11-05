@@ -231,7 +231,7 @@ const songs = {
         }
         return embedded ;
     },
-    onSuccess(song,lyrics,artist,embedded) {
+    onSuccess(song,lyrics,artist) {
         let _song = song;
         let _lyrics = lyrics;
         let _artist = ''
