@@ -11,57 +11,72 @@ const insertMoods = () => {
     } catch(error) {
         //console.log(error);
     }
-}
+};
 
 insertMoods();
 
-const inputE = document.getElementById('input');
-const input = inputE.value;
 const button = document.getElementById('submit');
 const container = document.getElementById('container');
 const resetBttn = document.getElementById('reset');
 const form = document.getElementById('form');
 let artistName = '';
 
-const format = (inp) => {
+/*const format = (inp) => {
   try {
     let genre =  songs.getGenre(inp);
     let song  =  songs.getSong(genre);
     let lyrics =  songs.getLyrics(song);
     let artist =  songs.getArtist(genre,song);
     artistName = artist;
-    let embed = songs.getEmbedded(song);
-    let success =  songs.onSuccess(song, lyrics, artist, embed);
+    let success =  songs.onSuccess(song, lyrics, artist);
     return success;
   } catch(error) {
     console.log(error);
   }
-}
+}*/
 
-const display = (event) => {
+const inputE = document.getElementById('input');
+const input = inputE.value;
+
+const display = async(event) => {
   event.preventDefault();
   while(container.firstChild){
     container.removeChild(container.firstChild);
   }
-  const result = format(input);
+  let genre =  songs.getGenre(input);
+  let song  =  songs.getSong(genre);
+  let lyrics = songs.getLyrics(song);
+  let artist = songs.getArtist(genre,song);
+  artistName = artist;
+  let result = songs.onSuccess(song, lyrics, artist);
   container.innerHTML = `<pre id="result">${result}
                           <img id="${artistName}" src="../assets/${artistName}.jpg">
                         </pre>`;
-}
+};
 
 const reset = (event) => {
-  event.preventDefault();
-  //form.reset();
-  container.innerHTML = "";
-  inputE.value = ""
+  try{
+    event.preventDefault();
+    //form.reset();
+    container.innerHTML = "";
+    inputE.value = "";
+  }catch(error) {
+    console.log(error);
+  }
 }
+
+/*document.querySelector('#moods').addEventListener('mouseover', (e) => {
+  if (e.target.matches('li')) {
+    inputE.value = e.target.innerHTML;
+  }
+});*/
 
 document.querySelector('#moods').addEventListener('click', (e) => {
   if (e.target.matches('li')) {
-    inputE.value = e.target.textContent;
+    inputE.value = e.target.innerHTML;
   }
 });
 
 button.addEventListener('click', display);
 
-resetBttn.addEventListener('click', reset)
+resetBttn.addEventListener('click', reset);
