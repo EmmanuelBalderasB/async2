@@ -1,11 +1,7 @@
-html{
-  width: 414px;
-}
 body {
   color: #f8f8f8;
   background-color: #222831;
   font-family: 'Oswald', sans-serif;
-  margin-top: 0px;
   min-width: fit-content;
   width: fit-content;
 }
@@ -40,15 +36,37 @@ button:hover {
   color: #f96d00;
 }
 ul {
-  padding: 0px 135px 0px 160px;
-  margin-top: auto;
-  max-width: fit-content;
+  padding-left: 2%;
+  max-width:fit-content;
   list-style-type: none;
-  margin-bottom: 0px;
+  margin-bottom: 16px;
+  height: 40px;
+  display: block;
 }
 
 li{
+  padding: 4px;
   color:#f96d00;
+  float: left;
+  margin-right: 0px;
+  display:  block;
+  background-color: #171b21;
+}
+
+li:hover{
+  background-color: #f96d00;
+  color:#f2f2f2;
+  cursor: pointer;
+}
+
+li#upbeat{
+  border-radius: 20% 0 0 20%;
+  padding-left: 15px;
+}
+
+li#angsty{
+  border-radius: 0 20% 20% 0;
+  padding-right: 15px;
 }
 
 #reset {
@@ -61,7 +79,8 @@ h3#introduction {
 form{
   max-width: fit-content;
   align-content:flex-start;
-  margin-top: 10px;
+  max-height: fit-content;
+  display: block;
 }
 
 #input{
